@@ -23,5 +23,8 @@ class Task(models.Model):
     # 1 max prio, 5 min prio
     priority = models.IntegerField(default=3)
 
+    planned = models.BooleanField(default=False)
+    plan_order = models.IntegerField(null=True, blank=True)
+
     def __str__(self):
         return self.title
